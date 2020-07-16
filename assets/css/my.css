@@ -1,0 +1,55 @@
+.wrapper {
+  @apply bg-purple-500 mx-auto min-h-screen flex flex-col;
+}
+
+.login-box {
+  @apply bg-white shadow-xl p-4 w-11/12 m-auto text-center;
+}
+
+.login-box h1 {
+  @apply text-2xl font-bold text-purple-500;
+}
+
+.form__block {
+  @apply flex flex-col w-full text-left mb-3;
+}
+
+.form__block label {
+  @apply font-bold text-gray-900 mb-1;
+}
+
+.form__block input {
+  @apply w-full px-3 py-2 bg-gray-200;
+}
+
+.form__block input:focus {
+  @apply bg-gray-300;
+}
+
+.button {
+  @apply px-3 py-2 bg-gray-500 text-gray-900 font-semibold;
+}
+
+.button--fluid {
+  @apply w-full;
+}
+
+.button__primary {
+  @apply bg-purple-500 text-white;
+}
+
+.button__primary:active {
+  @apply bg-purple-600;
+}
+
+@screen md {
+  .login-box {
+    @apply w-1/2;
+  }
+}
+
+@screen lg {
+  .login-box {
+    @apply w-1/4;
+  }
+}

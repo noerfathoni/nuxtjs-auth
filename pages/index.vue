@@ -1,27 +1,26 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-ts
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="wrapper">
+    <div class="login-box">
+      <h1>Welcome Back</h1>
+      <span class="block mb-8">Sign in to start your session</span>
+      <div>
+        <form>
+          <div class="form__block">
+            <label id="email">Email</label>
+            <input type="email" v-model="email" id="email" placeholder="your.email@mail.com">
+          </div>
+          <div class="form__block">
+            <label id="password">Password</label>
+            <input type="password" v-model="password" id="password" placeholder="********">
+          </div>
+          <button class="button button--fluid button__primary mt-6 mb-4">
+            Sign In
+          </button>
+          <span class="block text-sm mb-8">
+            Don't have an account ?
+            <nuxt-link to="/register" class="text-purple-500 font-bold">Register</nuxt-link>
+          </span>
+        </form>
       </div>
     </div>
   </div>
@@ -30,43 +29,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  }
+})
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
