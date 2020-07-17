@@ -3,7 +3,7 @@
 }
 
 .login-box {
-  @apply bg-white shadow-xl p-4 w-11/12 m-auto text-center;
+  @apply bg-white p-4 w-full text-center;
 }
 
 .login-box h1 {
@@ -50,6 +50,6 @@
 
 @screen lg {
   .login-box {
-    @apply w-1/4;
+    @apply w-full;
   }
 }
