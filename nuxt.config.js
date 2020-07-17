@@ -34,7 +34,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/axios'
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -57,17 +59,52 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    '@nuxtjs/auth'
   ],
+  router: {
+    middleware: ['auth'],
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'active'
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'http://127.0.0.1:3333/api/v1',
+    headers: {
+      common: {
+        'Accept': 'application/json'
+      }
+    }
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
    */
   content: {},
+  /*
+   ** Nuxt Auth module configuration
+   ** See https://auth.nuxtjs.org/guide/setup.html
+   */
+  auth: {
+    redirect: {
+      login: '/',
+      home: '/admin/',
+      logout: '/'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/', method: 'post', propertyName: 'token' },
+          logout: { url: '/sign-out', method: 'get' },
+          user: { url: '/profile', method: 'post', propertyName: false }
+        },
+        tokenRequired: true,
+        tokenType: 'bearer',
+      },
+    }
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

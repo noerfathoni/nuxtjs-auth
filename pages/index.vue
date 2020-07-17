@@ -30,10 +30,23 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  auth: false,
   data () {
     return {
       email: '',
       password: ''
+    }
+  },
+  methods: {
+    async login() {
+      await this.$auth
+        .loginWith('local', {
+          data: {
+            username: this.email,
+            password: this.password
+          }
+        })
+        .catch((e: any) => {})
     }
   }
 })

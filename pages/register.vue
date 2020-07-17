@@ -22,11 +22,11 @@
             <input type="password" v-model="rePassword" id="re-enter" placeholder="Re-Enter Password">
           </div>
           <button class="button button--fluid button__primary mt-6 mb-4">
-            Sign In
+            Create Account
           </button>
           <span class="block text-sm mb-8">
             Already have an account ?
-            <nuxt-link to="/" class="text-purple-500 font-bold">Create Account</nuxt-link>
+            <nuxt-link to="/" class="text-purple-500 font-bold">Sign In</nuxt-link>
           </span>
         </form>
       </div>
@@ -38,6 +38,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  auth: false,
   data () {
     return {
       fullname: '',
