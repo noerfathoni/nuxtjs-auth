@@ -11,7 +11,12 @@
           <form>
             <div class="form__block">
               <label id="email">Email</label>
-              <input type="email" v-model="email" id="email" placeholder="your.email@mail.com">
+              <div class="input__block">
+                <div class="input__block--prepend">
+                  <i class="las la-at"></i>
+                </div>
+                <input type="email" v-model="email" id="email" placeholder="your.email@mail.com">
+              </div>
             </div>
             <button class="button button--fluid button__primary mt-6 mb-4">
               Send Code

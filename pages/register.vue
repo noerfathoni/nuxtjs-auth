@@ -11,19 +11,39 @@
           <form>
             <div class="form__block">
               <label id="fullname">Fullname</label>
-              <input type="text" v-model="fullname" id="fullname" placeholder="Enter Fullname">
+              <div class="input__block">
+                <div class="input__block--prepend">
+                  <i class="las la-user"></i>
+                </div>
+                <input type="text" v-model="fullname" id="fullname" placeholder="Enter Fullname">
+              </div>
             </div>
             <div class="form__block">
               <label id="email">Email</label>
-              <input type="email" v-model="email" id="email" placeholder="Enter Email">
+              <div class="input__block">
+                <div class="input__block--prepend">
+                  <i class="las la-at"></i>
+                </div>
+                <input type="email" v-model="email" id="email" placeholder="Enter Email">
+              </div>
             </div>
             <div class="form__block">
               <label id="password">Password</label>
-              <input type="password" v-model="password" id="password" placeholder="Enter Password">
+              <div class="input__block">
+                <div class="input__block--prepend">
+                  <i class="las la-lock"></i>
+                </div>
+                <input type="password" v-model="password" id="password" placeholder="Enter Password">
+              </div>
             </div>
             <div class="form__block">
               <label id="re-enter">Re-Enter Password</label>
-              <input type="password" v-model="rePassword" id="re-enter" placeholder="Re-Enter Password">
+              <div class="input__block">
+                <div class="input__block--prepend">
+                  <i class="las la-lock"></i>
+                </div>
+                <input type="password" v-model="rePassword" id="re-enter" placeholder="Re-Enter Password">
+              </div>
             </div>
             <button class="button button--fluid button__primary mt-6 mb-4">
               Create Account

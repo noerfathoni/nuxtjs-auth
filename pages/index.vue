@@ -11,18 +11,32 @@
           <form>
             <div class="form__block">
               <label id="email">Email</label>
-              <input type="email" v-model="email" id="email" placeholder="your.email@mail.com">
+              <div class="input__block">
+                <div class="input__block--prepend">
+                  <i class="las la-at"></i>
+                </div>
+                <input type="email" v-model="email" id="email" placeholder="your.email@mail.com">
+              </div>
             </div>
             <div class="form__block">
               <label id="password">Password</label>
-              <input type="password" v-model="password" id="password" placeholder="********">
+              <div class="input__block">
+                <div class="input__block--prepend">
+                  <i class="las la-lock"></i>
+                </div>
+                <input type="password" v-model="password" id="password" placeholder="********">
+              </div>
             </div>
-            <nuxt-link
-              to="/forgot-password"
-              class="flex font-bold underline text-purple-500 text-sm justify-end"
-            >
-              Forgot Password?
-            </nuxt-link>
+            <div class="flex text-sm justify-between items-center mt-6">
+              <div class="flex flex-row items-center">
+                <label class="checkbox-container">
+                  <input type="checkbox" name="checkbox" id="">
+                  <span class="checkmark"></span>
+                </label>
+                <span class="font-semibold text-gray-900">Remember Me</span>
+              </div>
+              <nuxt-link to="/forgot-password" class="font-bold underline text-purple-500">Forgot Password?</nuxt-link>
+            </div>
             <button class="button button--fluid button__primary mt-6 mb-4">
               Sign In
             </button>

@@ -18,12 +18,21 @@
   @apply font-bold text-gray-900 mb-1 text-sm;
 }
 
-.form__block input {
+.form__block input,
+.input__block input {
   @apply w-full px-3 py-2 bg-gray-200;
 }
 
 .form__block input:focus {
   @apply bg-gray-300;
+}
+
+.input__block {
+  @apply flex flex-row;
+}
+
+.input__block--prepend {
+  @apply bg-gray-200 text-purple-500 flex justify-center items-center w-12 text-xl;
 }
 
 .button {
@@ -52,4 +61,90 @@
   .login-box {
     @apply w-full;
   }
+}
+
+
+/* The container */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  border-radius: 6px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #9f7aea;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 6px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav-bar {
+  @apply bg-white fixed min-h-screen w-64 flex flex-col px-4 overflow-auto;
+}
+
+.nav-menu {
+  @apply flex flex-col text-gray-900;
+}
+
+.nav-menu li a {
+  @apply py-4 flex flex-row items-center text-lg font-semibold;
+}
+
+.nav-menu li i {
+  @apply text-xl mr-4;
 }
